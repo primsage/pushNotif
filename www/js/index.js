@@ -35,7 +35,9 @@ var app = {
     onDeviceReady: function() {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
-        app.setupPush();
+        // app.setupPush();
+
+        // app.pushNoti();
 
         // Initialize Firebase
         var config = {
@@ -59,17 +61,19 @@ var app = {
             console.log('Value Changedd');
         });
 
-
-        setInterval(function(){ 
+        // navigator.notification.beep(1); 
+         // navigator.notification.vibrate(1000);
+        // setInterval(function(){ 
             // app.pushNoti();
-        }, 3000);
+        // }, 5000);
         
 
 
     },
     pushNoti: function(msgV) {
 
-        var time = new Date();
+        var time = new Date(); 
+        navigator.notification.beep(1); 
         navigator.notification.alert(
             msgV ,         // message
             null,                 // callback
